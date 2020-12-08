@@ -1,9 +1,10 @@
 package controller
 
 import (
-	"MDSite/app/model"
 	"encoding/json"
 	"net/http"
+
+	"github.com/iavealokin/MDSite/app/model"
 
 	"github.com/julienschmidt/httprouter"
 )

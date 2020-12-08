@@ -1,9 +1,10 @@
 package main
 
 import (
-	"MDSite/app/controller"
 	"log"
 	"net/http"
+
+	"github.com/iavealokin/MDSite/app/controller"
 
 	"github.com/julienschmidt/httprouter"
 )

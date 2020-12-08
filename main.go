@@ -1,7 +1,7 @@
 package main
 
 import (
-	"goSiteProject/app/controller"
+	"MDSite/app/controller"
 	"log"
 	"net/http"
 

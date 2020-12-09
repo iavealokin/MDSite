@@ -8,11 +8,14 @@
     </head>
 {{template "body"}}
 <h2 class="header">Ваши счета</h2>
+<div class="container bill">
+    <div class="row">
             {{range .Bills}}
-        <table class="bill" width="100%">
+            <div class="col">
+        <table class="bill" >
             <tbody>
                 <tr>
-                    <td rowspan="2" class="borderRight"><img width="100px" src="/public/img/{{.Bank}}.jpg"></td>
+                    <td rowspan="2" class="borderRight"><img width="120px" src="/public/img/{{.Bank}}.jpg"></td>
                     <td class="bold">{{.Name}}</td>
                 </tr>
                 <tr>
@@ -25,8 +28,10 @@
             </tbody>
            
         </table>
+    </div>
     {{end}}
-    
+</div>
+</div>
 {{template "scripts"}}
 
 {{end}}

@@ -12,9 +12,8 @@ import (
 func StartPage(rw http.ResponseWriter, r *http.Request, p httprouter.Params) {
 	//указываем путь к нужному файлу
 	path := filepath.Join("public", "html", "login.html")
-	common := filepath.Join("public", "html", "common.html")
 	//создаем html-шаблон
-	tmpl, err := template.ParseFiles(path, common)
+	tmpl, err := template.ParseFiles(path)
 	if err != nil {
 		http.Error(rw, err.Error(), 400)
 		return

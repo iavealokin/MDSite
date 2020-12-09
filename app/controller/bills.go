@@ -10,15 +10,22 @@ import (
 	"github.com/julienschmidt/httprouter"
 )
 
+//GetBillUser func ...
 func GetBillUser(rw http.ResponseWriter, r *http.Request, p httprouter.Params) {
-	bills, err := model.GetBillUser()
+	bills, err := model.GetUserBills()
 	if err != nil {
 		http.Error(rw, err.Error(), 400)
 		return
 	}
 	//указываем путь к файлу с шаблоном
-	main := filepath.Join("public", "html", "index.html")
-	common := filepath.Join("public", "html", "template.html")
+	main := filepath.Join("public", "html", "template.html")
+	common := filepath.Join("public", "html", "home.html")
+
+	user, err := model.GetUser()
+	if err != nil {
+		http.Error(rw, err.Error(), 400)
+		return
+	}
 
 	//создаем html-шаблон
 	tmpl, err := template.ParseFiles(main, common)
@@ -27,8 +34,8 @@ func GetBillUser(rw http.ResponseWriter, r *http.Request, p httprouter.Params) {
 		return
 	}
 
-	//исполняем именованный шаблон "users", передавая туда массив со списком пользователей
-	err = tmpl.ExecuteTemplate(rw, "bills", bills)
+	//исполняем именованный шаблон "home"
+	err = tmpl.ExecuteTemplate(rw, "home", struct{ Bills, User interface{} }{bills, user})
 	if err != nil {
 		http.Error(rw, err.Error(), 400)
 		return

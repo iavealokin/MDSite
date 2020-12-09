@@ -13,7 +13,7 @@ import (
 //GetUsers from JSON array to indexDynamic.html
 func GetUsers(rw http.ResponseWriter, r *http.Request, p httprouter.Params) {
 	//получаем список всех пользователей
-	_, err := model.GetAllUsers()
+	_, err := model.GetUser()
 	if err != nil {
 		http.Error(rw, err.Error(), 400)
 		return

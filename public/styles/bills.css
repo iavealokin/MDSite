@@ -1,0 +1,26 @@
+.borderRight{
+    padding-top:6px;
+   /* border-right: 1px solid gray;*/
+    width:120px;
+    text-align: center;
+}
+
+.header{
+    text-align: center;
+}
+.bill{
+    margin:20px;
+}
+.typeBill{
+    font-size: medium;
+    color: rgb(110, 104, 104);
+}
+
+.gray{
+    font-size: small;
+    color: rgb(110, 104, 104);
+}
+
+.bold{
+    font-weight: 800;
+}

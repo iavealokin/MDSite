@@ -1,0 +1,32 @@
+{{define "home"}}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Home</title>
+    {{template "head"}}
+    </head>
+{{template "body"}}
+<h2 class="header">Ваши счета</h2>
+            {{range .Bills}}
+        <table class="bill" width="100%">
+            <tbody>
+                <tr>
+                    <td rowspan="2" class="borderRight"><img width="100px" src="/public/img/{{.Bank}}.jpg"></td>
+                    <td class="bold">{{.Name}}</td>
+                </tr>
+                <tr>
+                    <td class="gray">Баланс: {{.BalanceRUB}}</td>
+                </tr>
+                <tr>
+                    <td class="borderRight typeBill">{{.BillType}}</td>
+                    <td class="gray">USD: {{.BalanceUSD}}</td>
+                </tr>
+            </tbody>
+           
+        </table>
+    {{end}}
+    
+{{template "scripts"}}
+
+{{end}}

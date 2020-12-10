@@ -11,7 +11,7 @@
 <h2 class="header">Транзакции</h2>
 <!--Плагин выбора дат - DaterangePicker-->
 Выберите диапазон дат
-<div id="reportrange" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%">
+<div id="reportrange" >
     <i class="fa fa-calendar"></i>&nbsp;
     <span></span> <i class="fa fa-caret-down"></i>
 </div>
@@ -41,11 +41,15 @@
 {{end}}
 
 {{template "scripts"}}
-<script src="daterangepicker/moment.js"></script>
+
 <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 <script>
+ $(document).ready(function(){
+        $('#sidebar li').removeClass('active');
+        $('#transactions').addClass('active');
+    })
 $(function() {
 
 var start = moment().subtract(29, 'days');

@@ -15,7 +15,7 @@ type Bill struct {
 //GetUserBills ..
 func GetUserBills() (bills []Bill, err error) {
 	bills = []Bill{
-		{1, "Тинькофф", 1050, 15, "дебет", 0, 0, "Tinkoff"},
+		{1, "Тинькофф", 1400, 20, "дебет", 0, 0, "Tinkoff"},
 		{2, "Убрир", 1400, 20, "дебет", 0, 0, "Ubrir"},
 		{3, "Раффайзен", 2100, 30, "дебет", 0, 0, "raiffeisen"},
 		{4, "Альфа-банк", 700, 10, "дебет", 0, 0, "alfa"},
